@@ -1,0 +1,101 @@
+function fix_homepage_slider() {
+    var height =$(".homepage-slider .slider-text").height() - $(".homepage-slider .item img").height();
+    $(".homepage-categories").css("margin-top", height);
+    height = height.toString().replace('-','');
+    $(".homepage-categories .counters-row .counters-col").css("height", height + "px");
+}
+$(document).ready(function () {
+    $('.home-slider').owlCarousel({
+        loop:true,
+        nav:false,
+        dots: false,
+        items:1,
+        margin:0
+    });
+    $('.zakaznici-slider').owlCarousel({
+        loop:true,
+        nav:true,
+        dots: false,
+        margin:25,
+        navText: ["<img src='/www/web/img/slider_arrow_left.svg' alt='arrow'>","<img src='/www/web/img/slider_arrow_right.svg' alt='arrow'>"],
+        responsive:{
+            0:{
+                items:1,
+                nav:true
+            },
+            768:{
+                items:3,
+                nav:false
+            },
+            993:{
+                items:4,
+                nav:false
+            },
+            1200:{
+                items:5,
+                nav:false
+            }
+        }
+    });
+    $('.clenove-slider').owlCarousel({
+		autoplay:true,
+		autoplayTimeout:2000, 		
+        loop:true,
+        nav:true,
+        navText: ["<img src='/www/web/img/slider_arrow_left.svg' alt='arrow'>","<img src='/www/web/img/slider_arrow_right.svg' alt='arrow'>"],
+        dots: false,
+        autoplayHoverPause:true,
+        margin:8,
+        responsive:{
+            0:{
+                items:1,
+                nav:true
+            },
+            768:{
+                items:3,
+                nav:false
+            },
+            993:{
+                items:5,
+                nav:false
+            },
+            1200:{
+                items:7,
+                nav:false
+            }
+        }
+    });
+    $('.pr-images-slider').owlCarousel({
+        loop:true,
+        nav:true,
+        navText: ["<img src='/www/web/img/slider2_arrow_left.svg' alt='arrow'>","<img src='/www/web/img/slider2_arrow_right.svg' alt='arrow'>"],
+        dots: false,
+        margin:8,
+        items:3
+    });
+    $('.page-images-slider').owlCarousel({
+        loop:false,
+        nav:true,
+        navText: ["<img src='/www/web/img/slider2_arrow_left.svg' alt='arrow'>","<img src='/www/web/img/slider2_arrow_right.svg' alt='arrow'>"],
+        dots: false,
+        margin:8,
+        items:5,
+        responsive:{
+            0:{
+                items:1,
+                nav:true
+            },
+            768:{
+                items:3,
+                nav:true
+            },
+            993:{
+                items:4,
+                nav:true
+            }
+        }
+    });
+});
+$(window).resize(function () { 
+    
+});
